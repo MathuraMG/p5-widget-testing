@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Accessibility Testing</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+  <script src="//mathuramg.github.io/p5.js-widget/p5-widget.js"></script>
+
+</head>
+
+<body>
+  <h1> Accessibility Testing </h1>
+  <h2> What is the p5 widget? </h2>
+  <p> This is a reusable widget made by <a href="http://www.toolness.com/wp/"> Atul Varma </a> that makes it easier to embed editable p5.js sketches in blog posts, interactive curricula, and other places.
+  </p>
+
+  <h2>Test 1 - The Navbar</h2>
+  <p> The p5 widget frame contains a code editor, an ouput frame and a toolbar. In the widget below, we will take a look at the toolbar and it's contents. </p>
+  <p To test, navigate to the widget frame below and enter the frame. Inside that, there is a navigation bar. Browse this. You should find a Start Button, a text output button, Grid Output Button and a Sound Output button and text saying current line.
+  </p>
+  <script type="text/p5" data-preview-width="400">
+function setup()
+{
+  createCanvas(200,200);
+  background(255);
+}
+  </script>
+
+  <h2>Test 2 - The Play Button</h2>
+  <p>
+    Go ahead and press the Play button. This will run the code that you have typed. It will also create a Stop Button right next to the play button
+  </p>
+  <script type="text/p5" data-preview-width="400">
+function setup()
+{
+  createCanvas(200,200);
+  background(255);
+}
+  </script>
+
+  <h2>Test 3 - The Coding Area</h2>
+  <p>
+    After the nav bar, you should enter the main coding area. Enter this and you should be able to read the below code -
+    function setup()
+    {
+      createCanvas(200,200);
+      background(255);
+    }
+  </p>
+  <script type="text/p5" data-preview-width="400">
+function setup()
+{
+  createCanvas(200,200);
+  background(255);
+}
+  </script>
+
+  <h2>Test 4 - Changing the code</h2>
+  <p>
+  In the code, the line which reads - 'createCanvas(200,200)' is the line that decides the size of the output. Let us go ahead and change the line to 'createCanvas(400,400)'. Do this and go to the nav bar, you will notice that there are 2 new buttons now, Undo and Revert. This will help with changing the code back to previous versions.
+  </p>
+  <script type="text/p5" data-preview-width="400">
+  function setup()
+  {
+  createCanvas(200,200);
+  background(255);
+  }
+  </script>
+
+  <h2>Test 5 - Text Output</h2>
+  <p>
+  In the below widget, there is a code that draws a ball on the output. Go into the nav bar, press the text output button and then press Play. This will take you to the frame containing the text output. Enter the frame and go through the output. Are you able to find the description of the ball?
+  </p>
+  <script type="text/p5" data-preview-width="400">
+  function setup()
+  {
+  createCanvas(200,200);
+  background(255);
+  fill("red");
+  ellipse(100,100,50,50)
+  }
+  </script>
+
+  <h2>Test 6 - Grid Output</h2>
+  <p>
+  In the below widget, there is a code that draws a ball on the output. Go into the nav bar, press the grid output button and then press Play. This will take you to the frame containing the text output. Enter the frame and go through the output. Are you able to find the description of the ball?
+  </p>
+  <script type="text/p5" data-preview-width="400">
+  function setup()
+  {
+  createCanvas(200,200);
+  background(255);
+  fill("red");
+  ellipse(100,100,50,50)
+  }
+  </script>
+
+  <h2>Test 6 - More Grid Output</h2>
+  <p>
+  In the below widget, there is a code that draws a moving ball on the output. Go into the nav bar, press the grid output button and then press Play. This will take you to the frame containing the text output. Enter the frame and go through the output. Are you able to find the description and direction of movement of the ball?
+  </p>
+  <script type="text/p5" data-preview-width="400">
+  function setup()
+  {
+    x = 0;
+    createCanvas(200,200);
+  }
+  function draw() {
+    x++;
+    background(255);
+    fill("red");
+    ellipse(x%200,100,50,50)
+  }
+  </script>
+
+
+  <h2>Test 7 - Sound Output</h2>
+  <p>
+  Please wear earphones/headphones for this test.
+  In the below widget, there is a code that draws a moving ball on the output. Go into the nav bar, press the sound output button and then press Play. You should be able to hear the sonified output. The mapping is as follows - the sounds moves from left to right earphone as the object moves from left to right. The frequency reduces as the object moves from top to bottom.
+  </p>
+  <script type="text/p5" data-preview-width="400">
+  function setup()
+  {
+    x = 0;
+    createCanvas(200,200);
+  }
+  function draw() {
+    x++;
+    background(255);
+    fill("red");
+    ellipse(x%200,100,50,50)
+  }
+  </script>
+
+  <h2>Test 8 - More Sound Output</h2>
+  <p>
+  Please wear earphones/headphones for this test.
+  In the below widget, there is a code that draws a 2 moving balls on the output. Go into the nav bar, press the sound output button and then press Play. You should be able to hear the sonified output. The mapping is as follows - the sounds moves from left to right earphone as the object moves from left to right. The frequency reduces as the object moves from top to bottom.
+  </p>
+  <script type="text/p5" data-preview-width="400">
+  function setup()
+  {
+    x = 0;
+    createCanvas(200,200);
+  }
+  function draw() {
+    x++;
+    background(255);
+    fill("red");
+    ellipse(x%200,100,50,50)
+    ellipse(100,x%200,50,50)
+  }
+  </script>
+
+
+
+</body>
+
+</html>
